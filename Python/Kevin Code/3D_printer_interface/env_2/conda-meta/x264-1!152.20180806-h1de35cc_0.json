@@ -1,0 +1,96 @@
+{
+  "build": "h1de35cc_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/osx-64",
+  "constrains": [],
+  "depends": [],
+  "extracted_package_dir": "/Users/caballrm/opt/anaconda3/pkgs/x264-1!152.20180806-h1de35cc_0",
+  "features": "",
+  "files": [
+    "bin/x264",
+    "include/x264.h",
+    "include/x264_config.h",
+    "lib/libx264.152.dylib",
+    "lib/libx264.a",
+    "lib/libx264.dylib",
+    "lib/pkgconfig/x264.pc"
+  ],
+  "fn": "x264-1!152.20180806-h1de35cc_0.tar.bz2",
+  "license": "GPL-2.0",
+  "link": {
+    "source": "/Users/caballrm/opt/anaconda3/pkgs/x264-1!152.20180806-h1de35cc_0",
+    "type": 1
+  },
+  "md5": "e5297a493b76d32d98c45dd0fea79f33",
+  "name": "x264",
+  "package_tarball_full_path": "/Users/caballrm/opt/anaconda3/pkgs/x264-1!152.20180806-h1de35cc_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/x264",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/travis/miniconda3/conda-bld/x264_1552849295093/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_plac",
+        "sha256": "04ee4f61005664d0a950f192fbda96a1da94f076b6310db819ae5d5e14ce1e0e",
+        "sha256_in_prefix": "31b446071406f4f392bd5fa6f6c114741922d901847f95ffd9aae53ab1c9ff36",
+        "size_in_bytes": 1274600
+      },
+      {
+        "_path": "include/x264.h",
+        "path_type": "hardlink",
+        "sha256": "818ec792d07fa9e4f58fc981e476d4a66d5d57476799e02f4ea896be6ad4360d",
+        "sha256_in_prefix": "818ec792d07fa9e4f58fc981e476d4a66d5d57476799e02f4ea896be6ad4360d",
+        "size_in_bytes": 46920
+      },
+      {
+        "_path": "include/x264_config.h",
+        "path_type": "hardlink",
+        "sha256": "3e7e55e4726ea4b299da599de98fe451b383d7811847e1d7b4c1a3d2726349e2",
+        "sha256_in_prefix": "3e7e55e4726ea4b299da599de98fe451b383d7811847e1d7b4c1a3d2726349e2",
+        "size_in_bytes": 172
+      },
+      {
+        "_path": "lib/libx264.152.dylib",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/travis/miniconda3/conda-bld/x264_1552849295093/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_plac",
+        "sha256": "734d859d75a31fb0dcf93d482074081668ad119c4de43d84337ac3e5daa75078",
+        "sha256_in_prefix": "5f88cb517659afd0eb554dc8dd0098c1357c830af9a7f2b0e707889166bdc40e",
+        "size_in_bytes": 1163704
+      },
+      {
+        "_path": "lib/libx264.a",
+        "path_type": "hardlink",
+        "sha256": "984b5a1a835aac35a1e50bfb44115a8162f4b77a976be265a980223cc4b04df9",
+        "sha256_in_prefix": "984b5a1a835aac35a1e50bfb44115a8162f4b77a976be265a980223cc4b04df9",
+        "size_in_bytes": 1420128
+      },
+      {
+        "_path": "lib/libx264.dylib",
+        "file_mode": "binary",
+        "path_type": "softlink",
+        "prefix_placeholder": "/Users/travis/miniconda3/conda-bld/x264_1552849295093/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_plac",
+        "sha256": "734d859d75a31fb0dcf93d482074081668ad119c4de43d84337ac3e5daa75078",
+        "size_in_bytes": 1163704
+      },
+      {
+        "_path": "lib/pkgconfig/x264.pc",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "371ba4f539389c8790173aa1b0275dac350f460c4e8c22ddab4bd94df012c902",
+        "sha256_in_prefix": "291b47861fd605320739edc56439791297af6551fecdacc637742c7ae1c9b300",
+        "size_in_bytes": 289
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "1058453480465e0183fa4ebefaab568be2ab3095af0fdf5b8d8f6b4a57f37949",
+  "size": 1547179,
+  "subdir": "osx-64",
+  "timestamp": 1552849517311,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/osx-64/x264-1!152.20180806-h1de35cc_0.tar.bz2",
+  "version": "1!152.20180806"
+}

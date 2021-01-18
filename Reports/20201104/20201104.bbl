@@ -1,0 +1,20 @@
+\begin{thebibliography}{1}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{doi:10.1146/annurev-control-071819-010010}
+M.~S. Moses, G.~S. Chirikjian,
+  \href{https://doi.org/10.1146/annurev-control-071819-010010}{Robotic
+  self-replication}, Annual Review of Control, Robotics, and Autonomous Systems
+  3~(1) (2020) 1--24.
+\newblock \href
+  {http://arxiv.org/abs/https://doi.org/10.1146/annurev-control-071819-010010}
+  {\path{arXiv:https://doi.org/10.1146/annurev-control-071819-010010}}, \href
+  {https://doi.org/10.1146/annurev-control-071819-010010}
+  {\path{doi:10.1146/annurev-control-071819-010010}}.
+\newline\urlprefix\url{https://doi.org/10.1146/annurev-control-071819-010010}
+
+\end{thebibliography}

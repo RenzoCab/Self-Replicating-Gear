@@ -1,0 +1,13 @@
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app\bin\Debug\netcoreapp3.1\SW_app.exe
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app\bin\Debug\netcoreapp3.1\SW_app.deps.json
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app\bin\Debug\netcoreapp3.1\SW_app.runtimeconfig.json
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app\bin\Debug\netcoreapp3.1\SW_app.runtimeconfig.dev.json
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app\bin\Debug\netcoreapp3.1\SW_app.dll
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app\bin\Debug\netcoreapp3.1\SW_app.pdb
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app\obj\Debug\netcoreapp3.1\SW_app.vbprojAssemblyReference.cache
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app\obj\Debug\netcoreapp3.1\SW_app.AssemblyInfoInputs.cache
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app\obj\Debug\netcoreapp3.1\SW_app.AssemblyInfo.vb
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app\obj\Debug\netcoreapp3.1\SW_app.vbproj.CoreCompileInputs.cache
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app\obj\Debug\netcoreapp3.1\SW_app.dll
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app\obj\Debug\netcoreapp3.1\SW_app.pdb
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app\obj\Debug\netcoreapp3.1\SW_app.genruntimeconfig.cache

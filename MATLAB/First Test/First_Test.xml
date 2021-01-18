@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SimscapeMultibodyImportXML version="2.0" xmlns="urn:mathworks:SimscapeMultibody:import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Created by="" on="10/25/20||18:21:11" using="Simscape Multibody Link Version 7.2" from="SolidWorks 27.3.0"/>
+<ModelUnits mass="kilogram" length="centimeter"/>
+<DataUnits mass="kilogram" length="meter"/>
+<RootAssembly name="First_Test" uid="First_Test" version="233">
+<AssemblyFile name="First_Test.SLDASM" type="SolidWorks Assembly"/>
+<InstanceTree>
+<Instance name="spur gear_am-4" uid="spur gear_am-4" entityUid="spur gear_am*:*Metric - Spur gear 3M 16T 14.5PA 10FW ---S16N75H50L20S1">
+<Transform>
+<Rotation>0 -0.25134523827481375 0.96789750035661182 0 0.96789750035661182 0.25134523827481375 -1 0 0</Rotation>
+<Translation>0.079999999999999988 0 0</Translation>
+</Transform>
+</Instance>
+<Instance name="spur gear_am-3" uid="spur gear_am-3" entityUid="spur gear_am*:*Metric - Spur gear 3M 36T 14.5PA 10FW ---S36N75H50L30R1">
+<Transform>
+<Rotation>0 0.78245463333251142 0.6227075933184737 0 0.6227075933184737 -0.78245463333251142 -1 0 0</Rotation>
+<Translation>0 0 0</Translation>
+</Transform>
+</Instance>
+</InstanceTree>
+<Constraints>
+<Coincident name="Coincident1">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>spur gear_am-3</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>First_Test</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident2">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>spur gear_am-4</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>First_Test</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric1">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>spur gear_am-3</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>First_Test</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric3">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>spur gear_am-4</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>-1 0 0</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>First_Test</Uid>
+</InstancePath>
+<Position>0.079999999999999988 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+</Constraints>
+</RootAssembly>
+<Assemblies>
+</Assemblies>
+<Parts>
+<Part name="spur gear_am" uid="spur gear_am*:*Metric - Spur gear 3M 16T 14.5PA 10FW ---S16N75H50L20S1" version="2063">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="spur gear_am.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.013916940878568301</Mass>
+<CenterOfMass>0.005000000000000001 -0.00014408338854756845 0</CenterOfMass>
+<Inertia>4.8413795272202318e-06 2.5479474022039842e-06 2.5253811396590512e-06 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="spur gear_am_Metric - Spur gear 3M 16T 14.5PA 10FW ---S16N75H50L20S1_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Diffuse r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Specular r="0.38823529411764707" g="0.3784313725490196" b="0.36862745098039218" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+<Part name="spur gear_am" uid="spur gear_am*:*Metric - Spur gear 3M 36T 14.5PA 10FW ---S36N75H50L30R1" version="1822">
+<ModelUnits mass="kilogram" length="millimeter"/>
+<PartFile name="spur gear_am.sldprt" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>0.082403103230141037</Mass>
+<CenterOfMass>0.0049999999999999992 -7.1734757975770516e-05 0</CenterOfMass>
+<Inertia>0.00012903777831901054 6.5253169702399153e-05 6.5157993670447058e-05 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="spur gear_am_Metric - Spur gear 3M 36T 14.5PA 10FW ---S36N75H50L30R1_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Diffuse r="0.77647058823529413" g="0.75686274509803919" b="0.73725490196078436" a="1"/>
+<Specular r="0.38823529411764707" g="0.3784313725490196" b="0.36862745098039218" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.3125</Shininess>
+</VisualProperties>
+</Part>
+</Parts>
+</SimscapeMultibodyImportXML>

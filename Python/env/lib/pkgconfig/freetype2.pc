@@ -1,0 +1,14 @@
+prefix=/Users/caballrm/Dropbox/Self Replicating Gear/Python/env
+exec_prefix=/Users/caballrm/Dropbox/Self Replicating Gear/Python/env
+libdir=/Users/caballrm/Dropbox/Self Replicating Gear/Python/env/lib
+includedir=/Users/caballrm/Dropbox/Self Replicating Gear/Python/env/include
+
+Name: FreeType 2
+URL: https://freetype.org
+Description: A free, high-quality, and portable font engine.
+Version: 23.4.17
+Requires:
+Requires.private: 
+Libs: -L${libdir} -lfreetype
+Libs.private: -lz -L/Users/caballrm/Dropbox/Self Replicating Gear/Python/env/lib -lpng16 -lz
+Cflags: -I${includedir}/freetype2

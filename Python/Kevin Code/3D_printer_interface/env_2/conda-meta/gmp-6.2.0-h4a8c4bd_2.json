@@ -1,0 +1,147 @@
+{
+  "build": "h4a8c4bd_2",
+  "build_number": 2,
+  "channel": "https://conda.anaconda.org/conda-forge/osx-64",
+  "constrains": [],
+  "depends": [
+    "libcxx >=9.0.1"
+  ],
+  "extracted_package_dir": "/Users/caballrm/opt/anaconda3/pkgs/gmp-6.2.0-h4a8c4bd_2",
+  "features": "",
+  "files": [
+    "include/gmp.h",
+    "include/gmpxx.h",
+    "lib/libgmp.10.dylib",
+    "lib/libgmp.a",
+    "lib/libgmp.dylib",
+    "lib/libgmpxx.4.dylib",
+    "lib/libgmpxx.a",
+    "lib/libgmpxx.dylib",
+    "lib/pkgconfig/gmp.pc",
+    "lib/pkgconfig/gmpxx.pc",
+    "share/info/gmp.info",
+    "share/info/gmp.info-1",
+    "share/info/gmp.info-2"
+  ],
+  "fn": "gmp-6.2.0-h4a8c4bd_2.tar.bz2",
+  "license": "GPL 2 and LGPL 3",
+  "link": {
+    "source": "/Users/caballrm/opt/anaconda3/pkgs/gmp-6.2.0-h4a8c4bd_2",
+    "type": 1
+  },
+  "md5": "2b54722280a66bdf4bcfd95ff62af265",
+  "name": "gmp",
+  "package_tarball_full_path": "/Users/caballrm/opt/anaconda3/pkgs/gmp-6.2.0-h4a8c4bd_2.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "include/gmp.h",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "ff8c6873dc51a0f39426c279743bc439f9c8fb2675e63287f8046e285d345559",
+        "sha256_in_prefix": "982f6ba93a86e10a4124dfa56134993a1e254caa3248f787f6179762557ad8fb",
+        "size_in_bytes": 84265
+      },
+      {
+        "_path": "include/gmpxx.h",
+        "path_type": "hardlink",
+        "sha256": "0011ae411a0bc1030e07d968b32fdc1343f5ac2a17b7d28f493e7976dde2ac82",
+        "sha256_in_prefix": "0011ae411a0bc1030e07d968b32fdc1343f5ac2a17b7d28f493e7976dde2ac82",
+        "size_in_bytes": 129113
+      },
+      {
+        "_path": "lib/libgmp.10.dylib",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/usr/local/miniconda/conda-bld/gmp_1582100625310/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold",
+        "sha256": "7555c009fa0df755407927a8938c92e4e7fa2dfd8631c65a9420b75e6c7f3e8d",
+        "sha256_in_prefix": "10add4499bb98bb2e3beb5be3baba78030ecfd79cd509c77833eb33d472488ac",
+        "size_in_bytes": 631248
+      },
+      {
+        "_path": "lib/libgmp.a",
+        "path_type": "hardlink",
+        "sha256": "89a409e072b24cf751887b609b1ae7c279c6ca1522a4c70951cfa0831174070c",
+        "sha256_in_prefix": "89a409e072b24cf751887b609b1ae7c279c6ca1522a4c70951cfa0831174070c",
+        "size_in_bytes": 1175376
+      },
+      {
+        "_path": "lib/libgmp.dylib",
+        "path_type": "softlink",
+        "sha256": "7555c009fa0df755407927a8938c92e4e7fa2dfd8631c65a9420b75e6c7f3e8d",
+        "size_in_bytes": 631248
+      },
+      {
+        "_path": "lib/libgmpxx.4.dylib",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/usr/local/miniconda/conda-bld/gmp_1582100625310/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold",
+        "sha256": "77aea3e2dacff3244abc2c7957a2ff9c3c3171c0be6ebadb5e3c094d3668295c",
+        "sha256_in_prefix": "9abcbf007463ee7948f7ac33f12e087dd53f56367b5126be8a4f5e3f5619ee99",
+        "size_in_bytes": 29564
+      },
+      {
+        "_path": "lib/libgmpxx.a",
+        "path_type": "hardlink",
+        "sha256": "2e81a9ecf76e3ab7acfa3669c311f534e4a2dbb32442fc43ab75ad5e4713ac0c",
+        "sha256_in_prefix": "2e81a9ecf76e3ab7acfa3669c311f534e4a2dbb32442fc43ab75ad5e4713ac0c",
+        "size_in_bytes": 33392
+      },
+      {
+        "_path": "lib/libgmpxx.dylib",
+        "path_type": "softlink",
+        "sha256": "77aea3e2dacff3244abc2c7957a2ff9c3c3171c0be6ebadb5e3c094d3668295c",
+        "size_in_bytes": 29564
+      },
+      {
+        "_path": "lib/pkgconfig/gmp.pc",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "073c48e3a0b125e3cbc2ce37f991f846adb2f1f0e1df47e6ede1f83c58546ef7",
+        "sha256_in_prefix": "2da3211aef7862f02775a97d679330371594f4c1c4c5300424d2f41b4763819a",
+        "size_in_bytes": 273
+      },
+      {
+        "_path": "lib/pkgconfig/gmpxx.pc",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+        "sha256": "179b97261d3c3a0d83522d2c00e432365228006baa8440040e46fc00f2c4ea51",
+        "sha256_in_prefix": "deb8cc9d2244f805db91b0d383142aed58582232f9631481b2899e24b52a0e93",
+        "size_in_bytes": 308
+      },
+      {
+        "_path": "share/info/gmp.info",
+        "path_type": "hardlink",
+        "sha256": "fe09cc81b45a85ef79e0b9388485bbecb1c9a2dd1e34abeb3b45f1e4ce7415d7",
+        "sha256_in_prefix": "fe09cc81b45a85ef79e0b9388485bbecb1c9a2dd1e34abeb3b45f1e4ce7415d7",
+        "size_in_bytes": 5926
+      },
+      {
+        "_path": "share/info/gmp.info-1",
+        "path_type": "hardlink",
+        "sha256": "7a3b05fc9011773a020fb50098e183220e6f9f95cd282b2514ad232331b57b17",
+        "sha256_in_prefix": "7a3b05fc9011773a020fb50098e183220e6f9f95cd282b2514ad232331b57b17",
+        "size_in_bytes": 302872
+      },
+      {
+        "_path": "share/info/gmp.info-2",
+        "path_type": "hardlink",
+        "sha256": "6f6dffa69338215791c0ff620079da7bc76d55a204785112051dbcc0f753a645",
+        "sha256_in_prefix": "6f6dffa69338215791c0ff620079da7bc76d55a204785112051dbcc0f753a645",
+        "size_in_bytes": 216309
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "63262f81790c773272a0877a104b8380bc95e07f698ac4ce9d554ff5d859c26b",
+  "size": 807027,
+  "subdir": "osx-64",
+  "timestamp": 1582101133553,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/osx-64/gmp-6.2.0-h4a8c4bd_2.tar.bz2",
+  "version": "6.2.0"
+}

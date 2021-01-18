@@ -1,0 +1,10 @@
+prefix=/Users/caballrm/Dropbox/Self_Replicating_Gear/Python/Kevin Code/3D_printer_interface/env_2
+libdir=/Users/caballrm/Dropbox/Self_Replicating_Gear/Python/Kevin Code/3D_printer_interface/env_2/lib
+includedir=${prefix}/include
+
+Name: OpenH264
+Description: OpenH264 is a codec library which supports H.264 encoding and decoding. It is suitable for use in real time applications such as WebRTC.
+Version: 2.1.1
+Libs: -L${libdir} -lopenh264 
+Libs.private: -lstdc++
+Cflags: -I${includedir}

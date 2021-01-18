@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+\usepackage[table]{xcolor}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[english]{babel}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{blkarray}
+\usepackage{float}
+\usepackage{bm}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{commath}
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{proposition}
+\newtheorem{exmp}{Example}[section]\newtheorem{definition}{Definition}[section]
+\newtheorem{remark}{Remark}
+\newtheorem{ex}{Exercise}
+\theoremstyle{definition}
+\theoremstyle{remark}
+\bibliographystyle{elsarticle-num}
+
+\DeclareMathOperator{\sinc}{sinc}
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\matindex}[1]{\mbox{\scriptsize#1}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\prob}{\mathbb{P}}
+
+\lstset{numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt}
+
+%\pagenumbering{gobble}
+%\setcounter{secnumdepth}{0} % This line removes the numbers in the titles.
+
+\begin{document}
+\title{Self Replicating Gear}
+\author{Renzo Miguel Caballero Rosas\\
+\url{Renzo.CaballeroRosas@kaust.edu.sa}\\
+\url{CaballeroRenzo@hotmail.com}\\
+\url{CaballeroRen@gmail.com}} 
+%\date{\vspace{-5ex}}
+\maketitle
+
+\tableofcontents
+
+\section{Some key points}
+
+\begin{itemize}
+
+\item We need to use discretizations in space to avoid extra complications. In particular, it would be hard to calculate when the gears stop touching each other if we use continuous space. Also, as we use discrete space, the speed can always be calculated in discretizations per unit of time, making the simulation easier.
+
+\item We may use more resolution for the $\beta$ gear so we can calculate its speed better. On the other hand, we can use the same spatial resolution but have a large speed in the $\alpha$ gear compared with the resolution, so it is like the resolution is less. The point to add more resolution is to better proximate the position considering the friction and acceleration.
+
+\item As a first approximation, each tooth only interacts with its selected twin. {\color{red} Update:} We simulate in small windows, so we do not care about the twins. Also, we add friction, so $\beta$ always is slower than $\alpha$ while they are not interacting. This may not be true while $\alpha$ is accelerating $\beta$, but if the speed decays fast enough, we can almost assume that. How to check which points are in the windows? We can use the angle $\theta$ of each point to verify whether it is in the windows. In the case of gear $\alpha$, we check if either point $P_{\alpha_i}$ or $P_{\alpha_{i_1}}$ are inside the windows. For gear $\beta$, we check if either $P_{\beta_i}$ or $P_{\beta_{i_4}}$ are inside. Other option is to check all the points $P_{\alpha_i}$ and $P_{\beta_i}$ inside the box, and the next and previous points to the ones in the box (with this, we cover all the cases).
+
+\item We add the friction so $\beta$ never hits $\alpha$. I do not know how to calculate that interaction.
+
+\end{itemize}
+
+
+\end{document}

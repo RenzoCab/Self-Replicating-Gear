@@ -1,0 +1,11 @@
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app_2\SW_app_2\obj\Debug\netcoreapp3.1\SW_app_2.vbprojAssemblyReference.cache
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app_2\SW_app_2\obj\Debug\netcoreapp3.1\Interop.SolidWorks.dll
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app_2\SW_app_2\obj\Debug\netcoreapp3.1\Interop.SldWorks.dll
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app_2\SW_app_2\obj\Debug\netcoreapp3.1\Interop.SwConst.dll
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app_2\SW_app_2\obj\Debug\netcoreapp3.1\Interop.SwCommands.dll
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app_2\SW_app_2\obj\Debug\netcoreapp3.1\Interop.SWUtilities.dll
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app_2\SW_app_2\obj\Debug\netcoreapp3.1\Interop.SwMotionStudy.dll
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app_2\SW_app_2\obj\Debug\netcoreapp3.1\SW_app_2.vbproj.ResolveComReference.cache
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app_2\SW_app_2\obj\Debug\netcoreapp3.1\SW_app_2.AssemblyInfoInputs.cache
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app_2\SW_app_2\obj\Debug\netcoreapp3.1\SW_app_2.AssemblyInfo.vb
+C:\Users\caballrm\Dropbox\Self Replicating Gear\VB_repos\SW_app_2\SW_app_2\obj\Debug\netcoreapp3.1\SW_app_2.vbproj.CoreCompileInputs.cache

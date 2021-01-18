@@ -1,0 +1,14 @@
+prefix=/Users/caballrm/Dropbox/Self_Replicating_Gear/Python/Kevin Code/3D_printer_interface/env_2
+exec_prefix=${prefix}
+libdir=/Users/caballrm/Dropbox/Self_Replicating_Gear/Python/Kevin Code/3D_printer_interface/env_2/lib
+includedir=/Users/caballrm/Dropbox/Self_Replicating_Gear/Python/Kevin Code/3D_printer_interface/env_2/include
+
+Name: libswresample
+Description: FFmpeg audio resampling library
+Version: 3.7.100
+Requires: 
+Requires.private: libavutil >= 56.51.100
+Conflicts:
+Libs: -L${libdir}  -lswresample 
+Libs.private: -lm
+Cflags: -I${includedir}

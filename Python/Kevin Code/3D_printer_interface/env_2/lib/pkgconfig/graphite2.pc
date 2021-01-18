@@ -1,0 +1,7 @@
+
+Name: Graphite2
+Description: Font rendering engine for Complex Scripts
+Version: 3.0.1
+Libs: -L/Users/caballrm/Dropbox/Self_Replicating_Gear/Python/Kevin Code/3D_printer_interface/env_2/lib -lgraphite2
+Cflags: -I/Users/caballrm/Dropbox/Self_Replicating_Gear/Python/Kevin Code/3D_printer_interface/env_2/include
+

@@ -1,0 +1,37 @@
+{
+  "build": "py38h23f93f0_2",
+  "build_number": 2,
+  "channel": "https://conda.anaconda.org/conda-forge/osx-64",
+  "constrains": [],
+  "depends": [
+    "libopencv 4.4.0 py38_2",
+    "numpy >=1.14.6,<2.0a0",
+    "python >=3.8,<3.9.0a0",
+    "python_abi 3.8.* *_cp38"
+  ],
+  "extracted_package_dir": "/Users/caballrm/opt/anaconda3/pkgs/py-opencv-4.4.0-py38h23f93f0_2",
+  "features": "",
+  "files": [],
+  "fn": "py-opencv-4.4.0-py38h23f93f0_2.tar.bz2",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "link": {
+    "source": "/Users/caballrm/opt/anaconda3/pkgs/py-opencv-4.4.0-py38h23f93f0_2",
+    "type": 1
+  },
+  "md5": "528d6d88cdbb5e6859af182accfccb2f",
+  "name": "py-opencv",
+  "package_tarball_full_path": "/Users/caballrm/opt/anaconda3/pkgs/py-opencv-4.4.0-py38h23f93f0_2.tar.bz2",
+  "paths_data": {
+    "paths": [],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "c66ff9e39a4771cfd7d123cbc07b3c6c919c20485227e1bb4203653f945f4f91",
+  "size": 21758,
+  "subdir": "osx-64",
+  "timestamp": 1595385118119,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/osx-64/py-opencv-4.4.0-py38h23f93f0_2.tar.bz2",
+  "version": "4.4.0"
+}

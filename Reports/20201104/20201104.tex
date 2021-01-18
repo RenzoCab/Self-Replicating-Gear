@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+\usepackage[table]{xcolor}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[english]{babel}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{blkarray}
+\usepackage{float}
+\usepackage{bm}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{commath}
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{proposition}
+\newtheorem{exmp}{Example}[section]\newtheorem{definition}{Definition}[section]
+\newtheorem{remark}{Remark}
+\newtheorem{ex}{Exercise}
+\theoremstyle{definition}
+\theoremstyle{remark}
+\bibliographystyle{elsarticle-num}
+
+\DeclareMathOperator{\sinc}{sinc}
+\newcommand{\RNum}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\matindex}[1]{\mbox{\scriptsize#1}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\prob}{\mathbb{P}}
+
+\lstset{numbers=left, numberstyle=\tiny, stepnumber=1, numbersep=5pt}
+
+%\pagenumbering{gobble}
+%\setcounter{secnumdepth}{0} % This line removes the numbers in the titles.
+
+\begin{document}
+\title{Self-maintenance and Self-replicating Robots}
+%\author{Renzo Miguel Caballero Rosas\\
+%\url{Renzo.CaballeroRosas@kaust.edu.sa}\\
+%\url{CaballeroRenzo@hotmail.com}\\
+%\url{CaballeroRen@gmail.com}} 
+\date{\vspace{-5ex}}
+\maketitle
+
+We consider the problem where an entity should be replicated or needs one of its pieces to be replaced. If the entity is built of a discrete number of parts, these parts can automatically be ordered online by the entity as soon as it realizes the parts are needed.\\
+
+The entity is also capable of reproducing some (or all) of these parts, being able to partial or complete self-replication. This capability introduces the challenge of keeping the quality invariant after many iterations.\\
+
+In the review of M. Moses and G. Chirikjian \cite{doi:10.1146/annurev-control-071819-010010}.
+
+\bibliography{references} 
+
+\end{document}

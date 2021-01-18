@@ -1,0 +1,12 @@
+prefix=/Users/caballrm/Dropbox/Self_Replicating_Gear/Python/Kevin Code/3D_printer_interface/env_2
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+
+Name: GNU MP C++
+Description: GNU Multiple Precision Arithmetic Library (C++ bindings)
+URL: https://gmplib.org
+Version: 6.2.0
+Requires: gmp
+Cflags: -I${includedir}
+Libs: -L${libdir} -lgmpxx

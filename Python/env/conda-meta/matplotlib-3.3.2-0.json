@@ -1,0 +1,35 @@
+{
+  "build": "0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/osx-64",
+  "constrains": [],
+  "depends": [
+    "matplotlib-base >=3.3.2,<3.3.3.0a0"
+  ],
+  "extracted_package_dir": "/Users/caballrm/opt/anaconda3/pkgs/matplotlib-3.3.2-0",
+  "features": "",
+  "files": [],
+  "fn": "matplotlib-3.3.2-0.conda",
+  "legacy_bz2_md5": "8d9bdabd84c6e4cc267051bf8f0bccae",
+  "license": "LicenseRef-PSF-based",
+  "license_family": "PSF",
+  "link": {
+    "source": "/Users/caballrm/opt/anaconda3/pkgs/matplotlib-3.3.2-0",
+    "type": 1
+  },
+  "md5": "07e6655ad12dbfc2306e8f8a3bc44e37",
+  "name": "matplotlib",
+  "package_tarball_full_path": "/Users/caballrm/opt/anaconda3/pkgs/matplotlib-3.3.2-0.conda",
+  "paths_data": {
+    "paths": [],
+    "paths_version": 1
+  },
+  "requested_spec": "matplotlib",
+  "sha256": "959687697a1fbf8e05c494e947d5d343974541498b736bce8fb1e18c378fc5a7",
+  "size": 24736,
+  "subdir": "osx-64",
+  "timestamp": 1603378116151,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/osx-64/matplotlib-3.3.2-0.conda",
+  "version": "3.3.2"
+}

@@ -1,0 +1,13 @@
+prefix=/Users/caballrm/Dropbox/Self_Replicating_Gear/Python/Kevin Code/3D_printer_interface/env_2
+exec_prefix=/Users/caballrm/Dropbox/Self_Replicating_Gear/Python/Kevin Code/3D_printer_interface/env_2
+libdir=/Users/caballrm/Dropbox/Self_Replicating_Gear/Python/Kevin Code/3D_printer_interface/env_2/lib
+includedir=/Users/caballrm/Dropbox/Self_Replicating_Gear/Python/Kevin Code/3D_printer_interface/env_2/include
+
+Name: harfbuzz
+Description: HarfBuzz text shaping library
+Version: 2.4.0
+
+Libs: -L${libdir} -lharfbuzz
+Libs.private: -lm    
+Requires.private: glib-2.0 >= 2.19.1 graphite2 >= 1.2.0
+Cflags: -I${includedir}/harfbuzz

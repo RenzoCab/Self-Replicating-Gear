@@ -1,0 +1,12 @@
+# Package Information for pkg-config
+
+prefix=/Users/caballrm/Dropbox/Self_Replicating_Gear/Python/Kevin Code/3D_printer_interface/env_2
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libpcrecpp
+Description: PCRECPP - C++ wrapper for PCRE
+Version: 8.44
+Libs: -L${libdir} -lpcre -lpcrecpp
+Cflags: -I${includedir} 

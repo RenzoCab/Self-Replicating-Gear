@@ -1,0 +1,4 @@
+\babel@toc {english}{}
+\contentsline {section}{Introduction}{1}{section*.2}%
+\contentsline {section}{Preliminary Steps}{1}{section*.3}%
+\contentsline {subsection}{Communication Channel}{1}{section*.4}%

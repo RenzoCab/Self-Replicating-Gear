@@ -1,0 +1,131 @@
+{
+  "build": "hd174df1_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/osx-64",
+  "constrains": [],
+  "depends": [
+    "libcxx >=9.0.1",
+    "zlib >=1.2.11,<1.3.0a0"
+  ],
+  "extracted_package_dir": "/Users/caballrm/opt/anaconda3/pkgs/openh264-2.1.1-hd174df1_0",
+  "features": "",
+  "files": [
+    "bin/h264dec",
+    "bin/h264enc",
+    "include/wels/codec_api.h",
+    "include/wels/codec_app_def.h",
+    "include/wels/codec_def.h",
+    "include/wels/codec_ver.h",
+    "lib/libopenh264.2.1.1.dylib",
+    "lib/libopenh264.6.dylib",
+    "lib/libopenh264.a",
+    "lib/libopenh264.dylib",
+    "lib/pkgconfig/openh264.pc"
+  ],
+  "fn": "openh264-2.1.1-hd174df1_0.tar.bz2",
+  "license": "BSD-2-Clause",
+  "license_family": "BSD",
+  "link": {
+    "source": "/Users/caballrm/opt/anaconda3/pkgs/openh264-2.1.1-hd174df1_0",
+    "type": 1
+  },
+  "md5": "424bfd619855f767658c071247b6707f",
+  "name": "openh264",
+  "package_tarball_full_path": "/Users/caballrm/opt/anaconda3/pkgs/openh264-2.1.1-hd174df1_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "bin/h264dec",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/openh264_1590114968374/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "368f4761a648a53c1be128a23fd00749595c7cd7cf0ce18d8e8dcf0f6ed93ba5",
+        "sha256_in_prefix": "8ce0508435860fb4e337223d870099acefcd16d2f1a750fa70cc03e33daa1288",
+        "size_in_bytes": 569508
+      },
+      {
+        "_path": "bin/h264enc",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/openh264_1590114968374/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "c4bc48219cbdf09db4f72292dc8811458d1e008ae7ec6d5c3f92564e7a58733f",
+        "sha256_in_prefix": "45abd47e5999b3a8eb0b2dd5c4047df5a1efcc44d2a16c0160df8a873b3eee0b",
+        "size_in_bytes": 866216
+      },
+      {
+        "_path": "include/wels/codec_api.h",
+        "path_type": "hardlink",
+        "sha256": "21f29b20c24f7c7946f2e243d0bc2532fb3542f6c28af338209477e70d9036c9",
+        "sha256_in_prefix": "21f29b20c24f7c7946f2e243d0bc2532fb3542f6c28af338209477e70d9036c9",
+        "size_in_bytes": 21178
+      },
+      {
+        "_path": "include/wels/codec_app_def.h",
+        "path_type": "hardlink",
+        "sha256": "2536a902664c22d264ff87ab554ad3f9f859495b712c4c1f022fa67b68f928ae",
+        "sha256_in_prefix": "2536a902664c22d264ff87ab554ad3f9f859495b712c4c1f022fa67b68f928ae",
+        "size_in_bytes": 32652
+      },
+      {
+        "_path": "include/wels/codec_def.h",
+        "path_type": "hardlink",
+        "sha256": "f974d269b5935e8dc7265b8bfc02f60e5185b4d6165d30541d2758a4506f1979",
+        "sha256_in_prefix": "f974d269b5935e8dc7265b8bfc02f60e5185b4d6165d30541d2758a4506f1979",
+        "size_in_bytes": 7630
+      },
+      {
+        "_path": "include/wels/codec_ver.h",
+        "path_type": "hardlink",
+        "sha256": "d1efa783462b8cc6466a00079681475d7eb63a3fe6e5db1e7f7b5e8c00ce85f3",
+        "sha256_in_prefix": "d1efa783462b8cc6466a00079681475d7eb63a3fe6e5db1e7f7b5e8c00ce85f3",
+        "size_in_bytes": 420
+      },
+      {
+        "_path": "lib/libopenh264.2.1.1.dylib",
+        "file_mode": "binary",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/openh264_1590114968374/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "7429ac0a25508297a919dc1669566230ae2e5faac30521335ae660cf389137e0",
+        "sha256_in_prefix": "f4a7258de77eff4dca1441e61667023fa046611c8bb0bf70b3e6798fae63490a",
+        "size_in_bytes": 1213404
+      },
+      {
+        "_path": "lib/libopenh264.6.dylib",
+        "path_type": "softlink",
+        "sha256": "7429ac0a25508297a919dc1669566230ae2e5faac30521335ae660cf389137e0",
+        "size_in_bytes": 1213404
+      },
+      {
+        "_path": "lib/libopenh264.a",
+        "path_type": "hardlink",
+        "sha256": "c1b821a48f4b63e407a8af81b75dbc5d646b0c243ec765dc9978c177acb3cc56",
+        "sha256_in_prefix": "c1b821a48f4b63e407a8af81b75dbc5d646b0c243ec765dc9978c177acb3cc56",
+        "size_in_bytes": 1593352
+      },
+      {
+        "_path": "lib/libopenh264.dylib",
+        "path_type": "softlink",
+        "sha256": "7429ac0a25508297a919dc1669566230ae2e5faac30521335ae660cf389137e0",
+        "size_in_bytes": 1213404
+      },
+      {
+        "_path": "lib/pkgconfig/openh264.pc",
+        "file_mode": "text",
+        "path_type": "hardlink",
+        "prefix_placeholder": "/Users/runner/miniforge3/conda-bld/openh264_1590114968374/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_",
+        "sha256": "89c39fa2dc2e740fd0959448180e2949df2b33ee124af3e151c47aa162e3dde7",
+        "sha256_in_prefix": "9e5b448455a2e56bccbbb7e47c650d15835e468859e6d4de1e51e262861e1d33",
+        "size_in_bytes": 817
+      }
+    ],
+    "paths_version": 1
+  },
+  "requested_spec": "None",
+  "sha256": "eb32086b934e409b7d5c4e1524964e48fe362bacb6dfe001b0b0850f3c2c879b",
+  "size": 1570497,
+  "subdir": "osx-64",
+  "timestamp": 1590115133657,
+  "track_features": "",
+  "url": "https://conda.anaconda.org/conda-forge/osx-64/openh264-2.1.1-hd174df1_0.tar.bz2",
+  "version": "2.1.1"
+}

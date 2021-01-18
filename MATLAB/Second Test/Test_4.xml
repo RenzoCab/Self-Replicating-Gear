@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<SimscapeMultibodyImportXML version="2.0" xmlns="urn:mathworks:SimscapeMultibody:import" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Created by="" on="10/26/20||17:54:50" using="Simscape Multibody Link Version 7.2" from="SolidWorks 27.3.0"/>
+<ModelUnits mass="kilogram" length="centimeter"/>
+<DataUnits mass="kilogram" length="meter"/>
+<RootAssembly name="Test_4" uid="Test_4" version="243">
+<AssemblyFile name="Test_4.SLDASM" type="SolidWorks Assembly"/>
+<InstanceTree>
+<Instance name="Gear_1-3" uid="Gear_1-3" entityUid="Gear_1*:*Default">
+<Transform>
+<Rotation>0.88467101133096959 0.46621583168167874 4.3444234794382778e-16 -0.46621583168167874 0.88467101133096959 1.84040179438353e-16 -2.9853610600077002e-16 -3.653589122336338e-16 1</Rotation>
+<Translation>-0.13506133243155627 0.1349481011603576 -0.01</Translation>
+</Transform>
+</Instance>
+<Instance name="Gear_1-4" uid="Gear_1-4" entityUid="Gear_1*:*Default">
+<Transform>
+<Rotation>0.92426130168560128 0.38176045657773167 1.2768009611320717e-16 -0.38176045657773167 0.92426130168560128 0 -1.1209810607954193e-16 0 0.99999999999999978</Rotation>
+<Translation>-0.25506133243155626 0.1349481011603576 -0.0099999999999999985</Translation>
+</Transform>
+</Instance>
+</InstanceTree>
+<Constraints>
+<Coincident name="Coincident1">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Gear_1-4</Uid>
+</InstancePath>
+<Position>0 0 0.0099999999999999967</Position>
+<Axis>0 0 0.99999999999999978</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Test_4</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Coincident name="Coincident2">
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Gear_1-3</Uid>
+</InstancePath>
+<Position>0 0 0.01</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="plane">
+<InstancePath>
+<Uid>Test_4</Uid>
+</InstancePath>
+<Position>0 0 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Coincident>
+<Concentric name="Concentric7">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Gear_1-4</Uid>
+</InstancePath>
+<Position>0 0 0.0099999999999999967</Position>
+<Axis>0 0 -0.99999999999999978</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Test_4</Uid>
+</InstancePath>
+<Position>-0.25506133243155626 0.1349481011603576 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+<Concentric name="Concentric10">
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Gear_1-3</Uid>
+</InstancePath>
+<Position>0 0 0.01</Position>
+<Axis>0 0 -1</Axis>
+</ConstraintGeometry>
+<ConstraintGeometry geomType="circle">
+<InstancePath>
+<Uid>Test_4</Uid>
+</InstancePath>
+<Position>-0.13506133243155627 0.1349481011603576 0</Position>
+<Axis>0 0 1</Axis>
+</ConstraintGeometry>
+</Concentric>
+</Constraints>
+</RootAssembly>
+<Assemblies>
+</Assemblies>
+<Parts>
+<Part name="Gear_1" uid="Gear_1*:*Default" version="108">
+<ModelUnits mass="kilogram" length="centimeter"/>
+<PartFile name="Gear_1.SLDPRT" type="SolidWorks Part"/>
+<MassProperties>
+<Mass>9.9999999999999995e-07</Mass>
+<CenterOfMass>0 9.5571770803032238e-05 0.0049999999999999992</CenterOfMass>
+<Inertia>9.0698607534794626e-10 9.0913218487239266e-10 1.7994515935536724e-09 0 0 0</Inertia>
+</MassProperties>
+<GeometryFile name="Gear_1_Default_sldprt.STEP" type="STEP"/>
+<VisualProperties>
+<Ambient r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Diffuse r="0.792156862745098" g="0.81960784313725488" b="0.93333333333333335" a="1"/>
+<Specular r="0.396078431372549" g="0.40980392156862744" b="0.46666666666666667" a="1"/>
+<Emissive r="0" g="0" b="0" a="1"/>
+<Shininess>0.40000000596046448</Shininess>
+</VisualProperties>
+</Part>
+</Parts>
+</SimscapeMultibodyImportXML>
