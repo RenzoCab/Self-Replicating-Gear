@@ -66,6 +66,8 @@ Self-repairing robots are taking more importance with time; as a first approxima
 
 \subsection{Communication Channel}
 
-We start the work focusing on the communication PC-Printer. We are willing to use serial communication as suggested by some knowledgeable group members. We will first establish communication between well-known and controllable devices (PC-Arduino Nano), and after we can jump to the communication PC-Printer.
+We start the work focusing on the communication PC-Printer. We are willing to use serial communication as suggested by some knowledgeable group members. We will first establish communication between well-known and controllable devices (PC-Arduino Nano), and after we can jump to the communication PC-Printer.\\
+\quad\\
+Linux is not a real time operating system. So, we cannot generate pulses with the required timings to control stepper motors directly from the board pins with running software, even as a kernel module. Then, how can we use steppers and high-level Linux features? (\url{https://medium.com/iotforall/how-to-build-a-3d-printer-in-python-b05af32489f5})
 
 \end{document}
