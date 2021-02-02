@@ -2,7 +2,6 @@ import os, time
 import numpy as np
 
 from printer_interface import printerInterface
-from camera_interface import cameraInterface
 
 x_s = [37.0, 50.0]
 y_i = 57.5
@@ -33,12 +32,14 @@ def capture(ci, path, X, Y, Z):
 if __name__ == "__main__":
 	pi = printerInterface() # We create a printer interface object.
 	pi.connect() # We use the method 'connect' to connect to the printer's serial port.
+	# When we do this, the printer restarts.
 
 	if pi.ser != None: # If we are connected to a serial port...
+		# This also sets the printer to HOME for some reason...
        
 		if pi.init()[0]:
 			print("Homed")
-			pi.prime()
+			pi.prime() # Setting extruder temperature.
 			pi.moveTo(Z=70)
 			pi.moveTo(X=37, Y=40)
 			pi.moveTo(Z = 52)

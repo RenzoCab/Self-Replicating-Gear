@@ -4,7 +4,10 @@ import serial.tools.list_ports
 import time
 import re
 
-def query_yes_no(question, default="yes"):
+# Ender-5:
+upper_bounds_printer = [220.0, 220.0, 300.0]
+
+def query_yes_no(question, default="yes"): # Checked [NON].
 	"""Ask a yes/no question via input() and return their answer.
 
 	"question" is a string that is presented to the user.
@@ -38,11 +41,13 @@ def query_yes_no(question, default="yes"):
 							 "(or 'y' or 'n').\n")
 
 class printerInterface():
-	def __init__(self):
+
+	def __init__(self): # Checked [NON].
 		self.ser = None
 		self.temps = {}
 		self.pos = {}
-		self.bounds = {'X': (0.0, 125.0), 'Y': (0.0, 123.0), 'Z': (0.0, 120.0)}
+		self.bounds = {'X': (0.0, upper_bounds_printer[0]),
+			'Y': (0.0, upper_bounds_printer[1]), 'Z': (0.0, upper_bounds_printer[2])}
 		self.fanSpeed = 0
 		self.minExtrusionTemp = 180
 		self.minFanOnNozzleTemp = 70
@@ -50,15 +55,13 @@ class printerInterface():
 		self.p1 = re.compile(r'\w+:\d+[.]\d+')
 		self.p2 = re.compile(r'\w+:\d+[.]\d+\s/\d+[.]\d+')
 
-
-	def _sendCommand(self, cmd):
+	def _sendCommand(self, cmd): # Checked [NON].
 		self.ser.reset_input_buffer()
 		self.ser.reset_output_buffer()
 		self.ser.write((cmd + "\n").encode())
 		self.ser.flush()
 
-
-	def connect(self, port=None, baudrate=115200):
+	def connect(self, port = None, baudrate = 115200): # Checked [NON].
 		if port is None:
 			print("No port given")
 			for port in serial.tools.list_ports.comports():
@@ -79,16 +82,14 @@ class printerInterface():
 			print("r2", out)
 			return 1, out
 
-
-	def disconnect(self):
+	def disconnect(self): # Checked [NON].
 		self.ser.reset_input_buffer()
 		self.ser.reset_output_buffer()
 		self.ser.close()
 		print("Disconnected")
 		return 1, ""
 
-
-	def init(self):
+	def init(self): # Checked [NON].
 		pos = self.getPosition()
 		homed = False
 		if pos['X'] == 0 and pos['Y'] == 0 and pos['Z'] == 0:
@@ -107,8 +108,7 @@ class printerInterface():
 		out = self.ser.readline()
 		return homed, out.decode()
 
-
-	def moveTo(self, X=None, Y=None, Z=None, E=None, F=None):
+	def moveTo(self, X=None, Y=None, Z=None, E=None, F=None): # Checked [YES].
 		s = "G1"
 		new_pos = {}
 		if X is not None:
@@ -144,9 +144,7 @@ class printerInterface():
 			self.pos[k] = e
 		return 1, out.decode()
 
-
-	# Really should be called "moveBy"
-	def move(self, X=None, Y=None, Z=None, E=None, F=None):
+	def move(self, X = None, Y = None, Z = None, E = None, F = None): # Checked [YES].
 		s = "G1"
 		new_pos = {}
 		if X is not None:
@@ -180,15 +178,12 @@ class printerInterface():
 			self.pos[k] = e
 		return 1, out.decode()
 
-
-	def waitForMove(self):
+	def waitForMove(self): # Checked [NON].
 		self._sendCommand("M400")
 		out = self.ser.readline()
 		return 1, out.decode()
 
-
-
-	def getPosition(self, k=3):
+	def getPosition(self, k=3): # Checked [NON].
 		self._sendCommand("M114")
 		out = self.ser.readline()
 		new_elements = []
@@ -201,8 +196,7 @@ class printerInterface():
 		else:
 			return self.getPosition(k=k-1)
 
-
-	def fanOn(self, speed=255):
+	def fanOn(self, speed=255): # Checked [NON].
 		if speed < self.minHotNozzleFanSpeed and self.getTemperature()[1]['T'][0] > self.minFanOnNozzleTemp:
 			return 0, "Unable to set fan speed. Fan speed needs to be at lease {:d} for temperatures higher than {:d} degrees".format(self.minHotNozzleFanSpeed, self.minFanOnNozzleTemp)
 		self._sendCommand("M106 S{:d}".format(speed))
@@ -210,8 +204,7 @@ class printerInterface():
 		self.fanSpeed = int(speed)
 		return 1, out.decode()
 
-
-	def fanOff(self):
+	def fanOff(self): # Checked [NON].
 		if self.getTemperature()[1]['T'][0] > self.minFanOnNozzleTemp:
 			return 0, "Unable to turn off the fan, extruder temperature is too high"
 		self._sendCommand("M107")
@@ -219,8 +212,7 @@ class printerInterface():
 		self.fanSpeed = 0
 		return 1, out.decode()
 
-
-	def setBedTemperature(self, T, wait=True, accurate=True):
+	def setBedTemperature(self, T, wait=True, accurate=True): # Checked [NON].
 		if wait and accurate:
 			s = "M190 R{:d}".format(T)
 		elif wait and not accurate:
@@ -235,8 +227,7 @@ class printerInterface():
 				time.sleep(1)
 		return 1, out.decode()
 
-
-	def setExtruderTemperature(self, T, wait=True, accurate=True):
+	def setExtruderTemperature(self, T, wait=True, accurate=True): # Checked [NON].
 		if T > self.minFanOnNozzleTemp and self.fanSpeed < self.minHotNozzleFanSpeed:
 			return 0, "Unable to set extruder temperature. Fan speed is {:d} but needs to be at lease {:d} for temperatures higher than {:d} degrees".format(self.fanSpeed, self.minHotNozzleFanSpeed, self.minFanOnNozzleTemp)
 		if wait and accurate:
@@ -253,8 +244,7 @@ class printerInterface():
 				time.sleep(1)
 		return 1, out.decode()
 
-
-	def getTemperature(self, k=5):
+	def getTemperature(self, k=5): # Checked [NON].
 		self._sendCommand("M105")
 		out = self.ser.readline().decode()
 		temps = self.p2.findall(out)
@@ -280,9 +270,7 @@ class printerInterface():
 		else:
 			raise Exception
 
-
-
-	def prime(self):
+	def prime(self): # Checked [NON].
 		print("Priming...")
 		self.fanOn(speed=200)
 		self.setExtruderTemperature(210, wait=False)
@@ -297,26 +285,21 @@ class printerInterface():
 		self.moveTo(X = 0, Y = 0, F=3000)
 		print("Done.")
 
-
-	def primeInPlace(self, E=3):
+	def primeInPlace(self, E=3): # Checked [NON].
 		self.fanOn(speed=200)
 		self.setExtruderTemperature(210, accurate=False)
 		self.move(E = E, F=300)
 
-
-	def pause(self):
+	def pause(self): # Checked [NON].
 		self.setExtruderTemperature(170, wait=False)
 		self.moveTo(X = 0, Y = 123)
 
-
-
-	def end(self):
+	def end(self): # Checked [NON].
 		self.setExtruderTemperature(0, wait=False)
 		self.setBedTemperature(0, wait=False)
 		self.moveTo(X = 0, Y = 123)
 
-
-if __name__ == "__main__":
+if __name__ == "__main__": # Checked [NON].
 	pi = printerInterface()
 	for port in serial.tools.list_ports.comports():
 		if query_yes_no("Want to try connect to {0} on port {1}?".format(port.description, port.device)):

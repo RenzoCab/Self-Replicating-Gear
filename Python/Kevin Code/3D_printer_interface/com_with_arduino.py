@@ -11,7 +11,8 @@ import random
 import serial
 import serial.tools.list_ports
 import re
-import cv2, queue, threading, time, copy
+# import cv2, queue, threading, time, copy
+import time, copy
 import os
 import numpy as np
 

@@ -1,8 +1,8 @@
-name: /Users/caballrm/Dropbox/Self-Replicating-Gear-V2/Python/Kevin Code/3D_printer_interface/env_2
+name: win_env
 channels:
   - defaults
 dependencies:
   - python=3.8.3
   - opencv
   - pyserial
-prefix: /Users/caballrm/Dropbox/Self-Replicating-Gear-V2/Python/Kevin Code/3D_printer_interface/env_2
+prefix: win_env
