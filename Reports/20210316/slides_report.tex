@@ -1,0 +1,114 @@
+\PassOptionsToPackage{table}{xcolor}
+\documentclass[aspectratio=169]{beamer}\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{color}
+\usepackage{amsmath,mathtools}
+\usepackage{booktabs}
+\usepackage{mathptmx}
+\usepackage[11pt]{moresize}
+\usepackage{hyperref}
+\usepackage{commath}
+\usepackage{bm}
+\usepackage{subfigure}
+\usepackage{siunitx}
+\usepackage{amsthm}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamersize{text margin left=5mm,text margin right=5mm}
+\setbeamertemplate{caption}[numbered]
+\addtobeamertemplate{navigation symbols}{}{
+\usebeamerfont{footline}
+\usebeamercolor[fg]{footline}
+\hspace{1em}
+\insertframenumber/\inserttotalframenumber}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\I}{\mathbb{I}}
+
+\title{3D Body Metric}
+\subtitle{Renzo Caballero}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+
+\setbeamercolor{background canvas}{bg=white!10}
+\begin{frame}\frametitle{Motivation}
+
+Let $A,B\subset\R^3$ two sets describing 3D bodies.\\
+\quad\\
+We want a mathematical way to describe when both bodies are equal. As an example, let $A=B_{([0,0,0],1)}$ and $B=B_{([1,1,1],1)}$ the unitary balls with centers in $(0,0,0)\in\R^3$ and $(1,1,1)\in\R^3$, respectively.\\
+\quad\\
+\textbf{Can we say $A=B$?} Since $(0,0,0)\in A$ but $(0,0,0)\notin B$, we have that $A\neq B$.\\
+\textbf{Can we say $A=B$ almost everywhere?} We know the answer is NO.\\
+\quad\\
+However, both $A$ and $B$ are unitary balls in $\R^3$, so there exists an isometry $I:\R^3\to\R^3$ such that $I(A)=B$. Then, we can say they are equal under some isometry.
+
+
+\end{frame}
+
+
+\setbeamercolor{background canvas}{bg=white!10}
+\begin{frame}\frametitle{Definitions}
+
+Let $A,B\subset\R^3$ two sets describing 3D bodies.
+\begin{definition}
+An equivalent class of $A$ contains all the sets $X\subset\R^3$ for with exists $I:\R^3\to\R^3$ isometry such that $I(X)=A$ almost everywhere w.r.t. the Lebesgue measure.
+\end{definition}
+Then, we have that $A\sim B$ if and only if $\exists I:\R^3\to\R^3$ s.t. $A=I(B)$ a.e. We use $\mathcal{A}$ to denote the equivalent class of $A$.\\
+\quad\\
+Let $\mathcal{A}$ and $\mathcal{B}$ two non-necessarily equal equivalent classes as described before, and let $A\in\mathcal{A}$ and $B\in\mathcal{B}$ some elements from that classes. The next inequalities are trivial:
+\begin{itemize}
+\item $A\cup B\supseteq A$ and $A\cup B\supseteq B$. We reach qualities if and only if $A=B$.
+\item $A\cap B\subseteq A$ and $A\cap B\subseteq B$. We reach qualities if and only if $A=B$.
+\end{itemize}
+
+\end{frame}
+
+
+\setbeamercolor{background canvas}{bg=white!10}
+\begin{frame}\frametitle{Definitions}
+
+$A\cup B\supseteq A\cap B\implies \mu(A\cup B)\geq\mu(A\cap B)\implies\mu(A\cup B)-\mu(A\cap B)\geq0$, and we reach the equality if and only if $A=B$ almost everywhere. Then we can define our metric:
+
+\begin{definition}
+Let $\mathcal{A}$ and $\mathcal{B}$ two equivalent classes over isometries, and let $A$ and $B$ arbitrary elements from that classes, we define the metric $d(\mathcal{A},\mathcal{B})$ as
+\begin{equation}
+d(\mathcal{A},\mathcal{B})=\min_{A\in\mathcal{A},B\in\mathcal{B}}\left[\mu(A\cup B)-\mu(A\cap B)\right].
+\end{equation}
+\end{definition}
+Notice that, $d(\mathcal{A},\mathcal{B})=0$ if and only if, $\mathcal{A}=\mathcal{B}$ (which implies that, for each pair $A$ and $B$, there exists an isometry $I:\R^3\to\R^3$ s.t. $I(A)=B$ almost everywhere).
+
+\end{frame}
+
+
+%\setbeamercolor{background canvas}{bg=white!10}
+%\begin{frame}\frametitle{Title}
+%
+%\begin{columns}[c]
+%
+%\column{.5\textwidth}
+%
+%\column{.5\textwidth}
+%\begin{figure}[ht!]
+%\centering
+%\includegraphics[width=0.4\textwidth]{Figures/20190809_1.png}
+%\end{figure}
+%
+%\end{columns}
+%
+%\end{frame}
+
+\end{document}

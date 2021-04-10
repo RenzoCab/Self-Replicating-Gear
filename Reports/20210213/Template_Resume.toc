@@ -1,0 +1,4 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Idea 1: Correcting using Encoder}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Encoder}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}What are we doing right now?}{2}{subsection.1.2}%

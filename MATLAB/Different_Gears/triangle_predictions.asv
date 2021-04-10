@@ -1,0 +1,234 @@
+close all;
+clear all;
+clc;
+
+var = 1;
+disc = 1000;
+
+btf_r = 6.0;
+l     = 8*2;
+r     = 480;
+r1    = 6.6;
+r2    = 6.6;
+gamma = deg2rad(30);
+gamma_comp = deg2rad(180-rad2deg(gamma));
+r3 = sqrt((l/2)^2+r^2);
+n = asin(r1*sin(gamma_comp)/r3);
+m = pi - n - gamma_comp;
+b = sin(pi-n-gamma_comp) * r3 / sin(gamma_comp);
+delta_b = @(dw) -b + sqrt(r3^2+r1^2-2*r3*r1*cos(m+dw));
+
+dw = linspace(0,2*pi/3,disc); % Notice the 2*pi/3.
+dw_x = dw;
+
+if 1 == var
+    
+    dw = [dw dw dw];
+    dw_x = linspace(0,2*pi,disc*3);
+    
+end
+
+tri = delta_b(dw);
+cir = btf_r * dw;
+
+if 1 == var
+    
+    tri(disc+1:disc*2) = tri(disc+1:disc*2) + tri (disc) + tri(2);
+    tri(2001:3000) = tri(2001:3000) + tri (2000) + tri(2);
+    cir(1001:2000) = cir(1001:2000) + cir (1000) + cir(2);
+    cir(2001:3000) = cir(2001:3000) + cir (2000) + cir(2);
+    
+end
+
+% This plot is the position of the belt for the circle and triangle.
+plot(dw_x,tri);
+hold on;
+plot(dw_x,cir);
+grid minor;
+xlabel('Pulley position (rad)');
+ylabel('Belt position (mm)');
+xlim([min(dw_x) max(dw_x)]);
+
+figure(2);
+plot(dw_x,cir-tri);
+grid minor;
+xlabel('Pulley position (rad)');
+ylabel('Belt position (mm)');
+xlim([min(dw_x) max(dw_x)]);
+
+% Steps:
+cir_step = cir(2:end) - cir(1:end-1);
+tri_step = tri(2:end) - tri(1:end-1);
+rel_step = tri_step./cir_step;
+
+figure(3);
+plot(dw_x(1:end-1),rel_step);
+grid minor;
+xlabel('Pulley position (rad)');
+xlim([min(dw_x) max(dw_x)]);
+
+%% Real Data:
+
+data = [0.843572186
+0.920523935
+0.976906214
+0.997305884
+0.959941421
+0.921083963
+0.890932743
+0.89190186
+0.867806285
+0.857422021
+0.838110706
+0.87314973
+0.884845991
+0.912284606
+0.905811135
+0.928235013
+0.943029974
+0.970943331
+0.977757972
+0.972733774
+0.954302541
+0.945698365
+0.941596246
+0.937905395
+0.921374052
+0.908975989
+0.892675976
+0.878997327
+0.858951582
+0.847739992
+0.854516258
+0.870882871
+0.897066524
+0.895263723
+0.897451315
+0.882096701
+0.898905238
+0.904143211
+0.921216049
+0.918377326
+0.923369801
+0.935563074
+0.95751891
+0.980297337
+0.988001042
+0.989431411
+0.9763438
+0.960935648
+0.937124053
+0.915150661
+0.886553748
+0.860052661
+0.84855805
+0.86052758
+0.88158085
+0.900276932
+0.907093157
+0.921235566
+0.925239764
+0.930859897
+0.935120976
+0.957471453
+0.994647118
+1.007897991
+0.991915639
+0.943883805
+0.928166717
+0.955135109
+1.013964261
+1.055193604
+1.069023492
+1.064215585];
+
+data_cleaned = data(3:64);
+data_cleaned = circshift(data_cleaned,-9);
+
+%% Plotting:
+
+data_cleaned = interp1(linspace(0,2*pi,length(data_cleaned)),data_cleaned,dw_x);
+
+figure(4);
+plot(dw_x(1:end-1),rel_step);
+hold on;
+plot(dw_x(1:end-1),data_cleaned(1:end-1));
+
+for i = 0:67
+    
+    rel_step_mean(1+i*44:68+i*44) = mean(rel_step(1+i*44:44+i*44));
+    aux(i+1) = mean(rel_step(1+i*44:44+i*44));
+    
+end
+
+for i = 3:length(aux)-2
+    
+    rel_step_mean_5(1+i*44:68+i*44) = mean(aux(i-2:i+2));
+    
+end
+
+rel_step_mean = rel_step_mean(1:3000);
+% plot(dw_x,rel_step_mean);
+% plot(dw_x(1:length(rel_step_mean_5)),rel_step_mean_5);
+grid minor;
+xlabel('Pulley position (rad)');
+xlim([min(dw_x) max(dw_x)]);
+
+return
+
+%% Others:
+
+
+
+tri_acum = cumsum(tri);
+cir_acum = cumsum(cir);
+
+figure;
+plot(dw_x,tri_acum/cir_acum(end));
+hold on;
+plot(dw_x,cir_acum/cir_acum(end));
+grid minor;
+
+figure;
+plot(dw_x,tri./cir);
+hold on;
+plot(dw_x,cir./cir);
+grid minor;
+
+%% Real data:
+
+A = [125.15	137.53
+    119.1	130.73
+    113.23	123.92
+    106.4	116.86
+    99.66	109.8
+    93.35	103.13
+    87.04	96.28
+    80.69	89.43
+    75.43	82.89
+    69.76	76.06
+    62.91	68.99
+    56.39	62.29
+    49.78	55.47
+    43.27	47.97
+    36.89	41.77
+    31.89	34.27
+    25.53	28.34
+    19.38	20.84
+    13.38	14.69
+    6.88	7.19];
+
+cte = 117.55;
+
+dif = A(:,2) - A(:,1);
+dif_norm = dif/cte;
+dif_acum = cumsum(dif_norm);
+
+limit = A(1,2) / cte;
+omega = linspace(0,2*pi*limit,20);
+
+figure;
+plot(omega,dif_norm);
+
+figure;
+plot(omega,dif_acum);

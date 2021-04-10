@@ -1,0 +1,261 @@
+ \documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{bbm}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{blkarray}
+\usepackage{float}
+\usepackage{bm}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{commath}
+\usepackage{amsthm}
+\newtheorem{definition}{Definition}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Iterating from carts to cars!\\
+%{\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and should not be used}
+\thanks{Thank you KAUST and RISC Lab for all.}}
+
+\author{\IEEEauthorblockN{1\textsuperscript{st} Renzo Caballero}
+\IEEEauthorblockA{\textit{CEMSE, AMCS} \\
+\textit{KAUST}\\
+Thuwal, KSA \\
+Renzo.CaballeroRosas@kaust.edu.sa}
+\and
+\IEEEauthorblockN{2\textsuperscript{nd} Eric Feron}
+\IEEEauthorblockA{\textit{CEMSE and MSE, ECE and ME} \\
+\textit{KAUST}\\
+Thuwal, KSA \\
+Eric.Feron@kaust.edu.sa}}
+%\and
+%\IEEEauthorblockN{3\textsuperscript{rd} Given Name Surname}
+%\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+%\textit{name of organization (of Aff.)}\\
+%City, Country \\
+%email address or ORCID}
+%\and
+%\IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
+%\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+%\textit{name of organization (of Aff.)}\\
+%City, Country \\
+%email address or ORCID}
+%\and
+%\IEEEauthorblockN{5\textsuperscript{th} Given Name Surname}
+%\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+%\textit{name of organization (of Aff.)}\\
+%City, Country \\
+%email address or ORCID}
+%\and
+%\IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
+%\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
+%\textit{name of organization (of Aff.)}\\
+%City, Country \\
+%email address or ORCID}
+%}
+
+\maketitle
+
+\begin{abstract}
+We propose an iterative method to print high precision pieces using a 3D printer with lower precision. We present empirical examples and show a mathematical model for these iterations.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Printers, Self-assembly, Self-replicating machines
+\end{IEEEkeywords}
+
+\section{Introduction}
+
+{\color{red}[I have to use better English]} Many works have been done in self-replicating robots like \cite{b1}. and []. Since the moment Von Neumann proposed his model with conditions for an entire self-replicating robotic system, similar works have followed [], [], and []. However, since the beginning of the humanity, it has been a problem  to to work very hard material using softer tools, and we still address this problem in most areas [], [], and [].
+
+A self-replicating robot should be able to reproduce all its pieces []. This requirement implies the capability to produce pieces with exactly or more quality than the existing ones. Otherwise, after many generations, the robot would become obsolete.
+
+We propose an iterative method where we do not create a perfect piece at once, but after a sequence of bad but monotony increasing in quality pieces. We also study necessary and sufficient conditions to converge to a good quality part. Moreover, we study the differences when we have slipping in some of the device's components. Finally, we compare our models with real examples.
+
+\section{Motivational example} \label{Sec2}
+
+A simple 3D printer model includes at least 3 pulleys, 3 200-steps motors, and 3 time belts with the 3 corresponding bearing. This objects allows the nuzzle to move in the printing area.
+
+Consider the movement along the $x$-axe. In an ideal case, where both pulley and baring have the same radius $r$ (see Fig. \ref{perfect_pulley}), the belt displacement is given by
+
+\begin{equation}
+r\Delta w=r\Delta\hat{w}=\Delta u,
+\label{eq:ideal}
+\end{equation}
+where $\Delta w$ corresponds to the minimum pulley angular rotation, which is a single step from the motor.
+
+However, if the pulley loses it radial symmetry because of wearing or an accident, Eq. \ref{eq:ideal} stops holding and instead we have that $\exists k^+:[0,2\pi)\to\R$ and $\exists k^-:[0,2\pi)\to\R$ such that for every step and position $\Delta w$ and w, we have
+
+\begin{equation}
+\Delta u=\left(\mathbbm{1}_{\{\dot{w}>0\}}k^+(w)+\mathbbm{1}_{\{\dot{w}<0\}}k^-(w)\right)\Delta w.
+\label{eq:nonideal}
+\end{equation}
+
+\begin{figure}[htbp]
+%\centerline{\includegraphics[width=0.45\textwidth]{figs/perfect_pulley.jpg}}
+\caption{Simple $x$-axe dynamical model for a 3D printer.}
+\label{perfect_pulley}
+\end{figure}
+
+Since the belt displacement $\Delta u$ as a function of $\Delta w$ is not anymore constant, but depends on the pulley angular position $w$ and speed $\dot{w}$, it is more challenging to print an ideal pulley to replace the broken one. As a consequence, it difficulties the self-replicating and self-repairing properties for the 3D printer.
+
+\section{Mathematical definitions}
+
+Let $A$ be a bounded 3D model and let $\mathcal{A}$ the set of all bounded 3D models, i.e., $A\in\mathcal{A}$. We define the cover cube $C_A$ of $A$ as the smallest 3D cube in $\R^3$ such that $A
+\subseteq C_A\subset\R^3$. Following the definition and up to a translation factor, we can write $C_A$ as
+
+\begin{equation}
+C_A=[0,\overline{x}_A]\times[0,\overline{y}_A]\times[0,\overline{z}_A]\subset\R^3.
+\end{equation}
+
+While printing, the nuzzle should be inside $C_A$. This implies that must exist a discrete set $W_A$ encapsulating the information about $A$ and $C_A$, but from the point of view of the positioning motors and pulleys. We then introduce $w_A^x,w_A^y,w_A^z\in\R^+$ such that
+\begin{multline}
+W_A=\{0,\Delta w,\dots,w_A^x-\Delta w,w_A^x\}\times\\
+\{0,\Delta w,\dots,w_A^y-\Delta w,w_A^y\}\times\{0,\Delta w,\dots,w_A^z-\Delta w,w_A^z\}.
+\end{multline}
+
+Notice we do not mention the stepping motor controlling the extruder since it is not necessary in this analysis.
+
+In the ideal case of Eq. \ref{eq:ideal} we have the trivial relation $C_A=W_A\cdot r$. However, in the non-ideal case of Eq. \ref{eq:nonideal} with the non-ideality $E\in\mathcal{E}$, the nuzzle will print inside the cube $D_{A,E}$ where no necessarily $D_{A,E}=C_A$.
+
+We still need to define the printing process itself. We define $P(\cdot):\mathcal{A}\to\mathcal{A}$ the printing process of printing $P(A)$ resulting in the real world 3D model $P(A)$. For an ideal 3D printer, $P(A)=A$ for all $A\in\mathcal{A}$. We also define the process of printing under the non-ideality $E\in\mathcal{E}$ as $P_E(A)$, notice that no necessarily we have that $P_E(A)=A$.
+
+\section{Iterative method}
+
+Given a non-ideality $E\in\mathcal{E}$, we propose a sequence of continuously more-ideal models $P_{E_i}(\cdot)$ such that for some small $\epsilon>0$ and some well defined norm $||\cdot||_{3D}$, exists $i\in\N$ such that for all $\N\ni j>i$, $||P_{E_j}(A)-A||_{3D}<\epsilon$.
+
+From a self-repairing point of view, we want to print a new part which makes our 3D printer more ideal. Let the non-ideal printer $P_{E_0}(\cdot)$ have a non-ideal 3D printable part $A^0$, and let $A$ be its ideal version. Since the printer is non-ideal, we most likely have that $P_{E_0}(A)=A^1\neq A$. However, as we substitute in the printer $A^0$ by $A^1$, the new non-ideality $E_1$ may let the printer perform better than $E_0$. As we keep iterating, under certain conditions and a given $\epsilon>0$, it may exist the natural $j$ as described before.
+
+\section{Norms and Indicator Function}
+{\color{red}
+Recall Lebesgue measure and the $L_1$ norm, then we have that
+\begin{equation}
+||I_A||_{L_1}=\int_{\R^3}|I_A|\dif\mu=\int_A\dif\mu=\mu(A),
+\end{equation}
+and
+\begin{equation}
+||I_A-I_{A'}||_{L_1}=\mu(A\cup A')-\mu(A\cap A').
+\end{equation}
+Let $\mathcal{I}$ be the set of all isometries in $\R^3$, and let $I\in\mathcal{I}$ one of its elements. Then, we define
+\begin{equation}
+\min_{I\in\mathcal{I}}\left[||I(I_A)-I_{A'}||_{L_1}\right].
+\end{equation}
+}
+\subsection{Measure}
+
+Let $A,B\subset\R^3$ two sets describing 3D bodies.\\
+\quad\\
+We want a mathematical way to describe when both bodies are equal. As an example, let $A=B_{([0,0,0],1)}$ and $B=B_{([1,1,1],1)}$ the unitary balls with centers in $(0,0,0)\in\R^3$ and $(1,1,1)\in\R^3$, respectively.\\
+\quad\\
+\textbf{Can we say $A=B$?} Since $(0,0,0)\in A$ but $(0,0,0)\notin B$, we have that $A\neq B$.\\
+\textbf{Can we say $A=B$ almost everywhere?} We know the answer is NO.\\
+\quad\\
+However, both $A$ and $B$ are unitary balls in $\R^3$, so there exists an isometry $I:\R^3\to\R^3$ such that $I(A)=B$. Then, we can say they are equal under some isometry.
+
+Let $A,B\subset\R^3$ two sets describing 3D bodies.
+\begin{definition}
+An equivalent class of $A$ contains all the sets $X\subset\R^3$ for with exists $I:\R^3\to\R^3$ isometry such that $I(X)=A$ almost everywhere w.r.t. the Lebesgue measure.
+\end{definition}
+Then, we have that $A\sim B$ if and only if $\exists I:\R^3\to\R^3$ s.t. $A=I(B)$ a.e. We use $\mathcal{A}$ to denote the equivalent class of $A$.\\
+\quad\\
+Let $\mathcal{A}$ and $\mathcal{B}$ two non-necessarily equal equivalent classes as described before, and let $A\in\mathcal{A}$ and $B\in\mathcal{B}$ some elements from that classes. The next inequalities are trivial:
+\begin{itemize}
+\item $A\cup B\supseteq A$ and $A\cup B\supseteq B$. We reach qualities if and only if $A=B$.
+\item $A\cap B\subseteq A$ and $A\cap B\subseteq B$. We reach qualities if and only if $A=B$.
+\end{itemize}
+
+$A\cup B\supseteq A\cap B\implies \mu(A\cup B)\geq\mu(A\cap B)\implies\mu(A\cup B)-\mu(A\cap B)\geq0$, and we reach the equality if and only if $A=B$ almost everywhere. Then we can define our metric:
+
+\begin{definition}
+Let $\mathcal{A}$ and $\mathcal{B}$ two equivalent classes over isometries, and let $A$ and $B$ arbitrary elements from that classes, we define the metric $d(\mathcal{A},\mathcal{B})$ as
+\begin{equation}
+d(\mathcal{A},\mathcal{B})=\min_{A\in\mathcal{A},B\in\mathcal{B}}\left[\mu(A\cup B)-\mu(A\cap B)\right].
+\end{equation}
+\end{definition}
+Notice that, $d(\mathcal{A},\mathcal{B})=0$ if and only if, $\mathcal{A}=\mathcal{B}$ (which implies that, for each pair $A$ and $B$, there exists an isometry $I:\R^3\to\R^3$ s.t. $I(A)=B$ almost everywhere). Also, we can define the normalized distance by dividing over one of the model's measure.
+
+{\color{blue}
+\section{Optimization method}
+
+Basically here, we want to find
+\begin{equation}
+B=\arg\min_{\mathcal{A}}||P(B)-P_E(A)||,
+\end{equation}
+where $A,B\in\mathcal{A}$, $P(\cdot)$ represents the ideal printer and $P_E(\cdot)$ the printer with the non-ideality $E\in\mathcal{E}$. We tested this and we have results.}
+
+\section{Particular case: Timing Pulley}
+
+To keep in track with the motivational example in Section \ref{Sec2}, we construct more mathematical definitions using this example. Notice that since we are modifying the timing pulley in the $y$-axe, most likely the differences are going to be presented in that axe. Now, since different $x$-positions may have different $y$-anomalies, we consider the $xy$-plane to be the studied one. We consider negligible the deformation in the $z$-axes.\\
+\quad\\
+Since the timing belt has tension, we consider consider the convex hull for the model $A$. We can also define an equivalence class for all bodies with the same convex hull. Then, the convex hull of $A$, call it $C(A)$, can be determined by a set of discrete and continuous segments, with associated angles and radius. When we consider continuous segments, we pay attention to the initial and final points.\\
+\quad\\
+\begin{equation}
+\sum_{i=1}^{200}\Delta_wr_i
+\label{eq:del_u}
+\end{equation}
+Given a rotation direction for the pulley (let say, clockwise), and assuming high tension and no slipping, the displacement in the timing belt is commanded by only one point from the convex hull. We call this point the key point.\\
+To approximate Eq. \ref{eq:del_u}, we use the alignment positions. Basically, when two discrete points from the convex hull are aligned with the reference point, we have a transition between key points in the convex hull. Then, we can find $\Delta u$ between consecutive key points studying the change in $a+b$ (see notes - belt position) between different consecutive key points. We give a better description in the Appendix.
+
+\subsection{Step by step}
+
+We proceed as follows:
+\begin{enumerate}
+
+\item We observe our 3D part which will be used in the printer.
+\item We create the convex hull from that part.
+\item We approximate Eq. \ref{eq:del_u} if the 3D model is large enough.
+
+\end{enumerate}
+
+\section{Experimental results}
+
+We observe three different behaviors: 
+
+\begin{figure}[htbp]
+%\centerline{\includegraphics[width=0.45\textwidth]{figs/tri_circ.png}}
+\caption{Sequence of cylindrical pulleys starting with a triangular pulley. We did not observe slipping during this iteration.}
+\label{tri_circ}
+\end{figure}
+
+\begin{figure}[htbp]
+%\centerline{\includegraphics[width=0.45\textwidth]{figs/tri_tri.png}}
+\caption{Sequence of triangular pulleys starting with a triangular pulley. During this iteration, the timing belt was allowed to to slip.}
+\label{tri_tri}
+\end{figure}
+
+\begin{figure}[htbp]
+%\centerline{\includegraphics[width=0.45\textwidth]{figs/tri_tri_FB.png}}
+\caption{Sequence of triangular pulleys starting with a triangular pulley. During this iteration, the timing belt adjusted so it does not slip.}
+\label{tri_tri_FB}
+\end{figure}
+
+\section*{Acknowledgment}
+
+\appendix \label{appendix}
+
+vv
+
+\begin{thebibliography}{00}
+\bibitem{b1}
+\bibitem{b2}
+\bibitem{b3}
+\bibitem{b4}
+\bibitem{b5}
+\bibitem{b6}
+\bibitem{b7}
+\end{thebibliography}
+ 
+\end{document}
