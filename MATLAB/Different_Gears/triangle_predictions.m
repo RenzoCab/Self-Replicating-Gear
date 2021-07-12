@@ -5,21 +5,24 @@ clc;
 var = 1;
 disc = 1000;
 
-btf_r = 6.0;
-l     = 8*2;
+btf_r = 6.0; % Original pulley radius.
+l     = 8*2; 
 r     = 480;
 r1    = 6.6;
 r2    = 6.6;
 gamma = deg2rad(30);
-gamma_comp = deg2rad(180-rad2deg(gamma));
-r3 = sqrt((l/2)^2+r^2);
-n = asin(r1*sin(gamma_comp)/r3);
-m = pi - n - gamma_comp;
-b = sin(pi-n-gamma_comp) * r3 / sin(gamma_comp);
-delta_b = @(dw) -b + sqrt(r3^2+r1^2-2*r3*r1*cos(m+dw));
 
-dw = linspace(0,2*pi/3,disc); % Notice the 2*pi/3.
-dw_x = dw;
+gamma_comp = deg2rad(180-rad2deg(gamma));
+r3         = sqrt((l/2)^2+r^2);
+n          = asin(r1*sin(gamma_comp)/r3);
+m          = pi - n - gamma_comp;
+b          = sin(pi-n-gamma_comp) * r3 / sin(gamma_comp);
+delta_b    = @(dw) -b + sqrt(r3^2+r1^2-2*r3*r1*cos(m+dw));
+dbdw       = @(m) (1/2) * (2*r1*r3*sin(m)) ./ sqrt(r1^2+r3^2-r1*r3*cos(m));
+
+dw     = linspace(0,2*pi/3,disc); % Notice the 2*pi/3.
+dw_com = linspace(0,2*pi,disc);
+dw_x   = dw;
 
 if 1 == var
     
@@ -28,8 +31,10 @@ if 1 == var
     
 end
 
-tri = delta_b(dw);
-cir = btf_r * dw;
+tri          = delta_b(dw);
+cir          = btf_r * dw;
+der_tri      = dbdw(dw_com);
+der_tri_norm = der_tri/btf_r; % We normalize tri_dbdw w.r.t. cir_dbdw.
 
 if 1 == var
     
@@ -75,7 +80,10 @@ tri_step = tri(2:end) - tri(1:end-1);
 rel_step = tri_step./cir_step;
 
 figure(3);
-plot(dw_x(1:end-1),rel_step);
+plot(dw_x(1:end-1),rel_step,'LineWidth',2);
+hold on;
+plot(dw_x(1:end-1),(rel_step+circshift(rel_step,floor(length(rel_step)/6)))/2,...
+    'LineWidth',2);
 grid minor;
 xlabel('Pulley position (rad)');
 xlim([min(dw_x) max(dw_x)]);
@@ -234,6 +242,31 @@ data_2 = [0.777777778
 0.983870968
 0.590163934];
 
+data_3 = [0.91
+0.94
+0.88
+0.95
+0.97
+1.03
+0.99
+0.98
+0.94
+0.94
+0.96
+0.93
+0.93
+0.88
+0.90
+0.93
+0.95
+0.97
+0.94
+0.96
+0.89
+0.88
+0.92
+0.93];
+
 data_cleaned = data(3:64);
 data_cleaned = circshift(data_cleaned,-9);
 data_2_cleaned = data_2(6:72);
@@ -241,14 +274,17 @@ data_2_cleaned = data_2(6:72);
 
 %% Plotting:
 
+close all;
+
 data_cleaned = interp1(linspace(0,2*pi,length(data_cleaned)),data_cleaned,dw_x);
 data_2_cleaned = interp1(linspace(0,2*pi,length(data_2_cleaned)),data_2_cleaned,dw_x);
+data_3_cleaned = interp1(linspace(0,2*pi*(2/3),length(data_3)),data_3,dw_x(1:2000));
 
-figure(4);
-plot(dw_x(1:end-1),rel_step);
+h = figure(4);
+plot(dw_x(1:end-1),rel_step,'LineWidth',2);
 hold on;
-plot(dw_x(1:end-1),data_cleaned(1:end-1));
-% plot(dw_x(1:end-1),data_2_cleaned(1:end-1));
+plot(dw_x(1:end-1),data_cleaned(1:end-1),'LineWidth',2);
+plot(dw_x(1:2000),data_3_cleaned,'LineWidth',2);
 
 for i = 0:67
     
@@ -263,9 +299,27 @@ for i = 3:length(aux)-2
     
 end
 
-rel_step_mean = rel_step_mean(1:3000);
-% plot(dw_x,rel_step_mean);
-% plot(dw_x(1:length(rel_step_mean_5)),rel_step_mean_5);
 grid minor;
 xlabel('Pulley position (rad)');
+ylabel('Relative Derivative');
 xlim([min(dw_x) max(dw_x)]);
+legend({'Theoretical Value', 'Experiment 1 Measurements','Experiment 2 Measurements'},...
+    'Location','southeast');
+title('Relative Belt Displacement w.r.t. Motor Step');
+supersizeme(h, 1.5);
+
+return;
+
+figure(6);
+plot(dw_com,der_tri);
+xline(30*2*pi/360);
+xline(150*2*pi/360);
+grid minor;
+xlabel('Pulley position (rad)');
+
+figure(7);
+plot(dw_com,der_tri_norm);
+xline(30*2*pi/360);
+xline(150*2*pi/360);
+grid minor;
+xlabel('Pulley position (rad)');

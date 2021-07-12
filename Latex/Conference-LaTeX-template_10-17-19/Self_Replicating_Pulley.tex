@@ -216,9 +216,11 @@ We proceed as follows:
 
 \item We observe our 3D part which will be used in the printer.
 \item We create the convex hull from that part.
-\item We approximate Eq. \ref{eq:del_u} if the 3D model is large enough.
+\item We approximate Eq. \ref{eq:del_u} if the 3D model is large enough considering only the key points and the displacements in $u$ ($\Delta u$).
 
 \end{enumerate}
+
+Approximation \ref{eq:del_u} is good when we are talking about large models. However, if the model is small enough we need to consider $\frac{\dif u}{\dif w}$.
 
 \section{Experimental results}
 
@@ -242,11 +244,19 @@ We observe three different behaviors:
 \label{tri_tri_FB}
 \end{figure}
 
+\section*{Future work}
+
+We are already planning to utilize encoders and Python scripts to obtain more accurate experimental results. We will use them to improve our model.\\
+\begin{enumerate}
+
+\item We are assuming that the convex hull is created by discrete countable points.4
+
+\end{enumerate}
+Also, we will construct a more complicated model that considers slipping, the rotation direction, elasticity in the timing belt.
+
 \section*{Acknowledgment}
 
 \appendix \label{appendix}
-
-vv
 
 \begin{thebibliography}{00}
 \bibitem{b1}
